@@ -348,7 +348,7 @@ Then, as in the hand over hand algorithm, the *pred* and *curr* nodes being prot
 
 ### Deadlock freedom
 
-Any process is able to make progress during the wait-free traversal step. Then, If the nodes that where found couldn't be locked or validated, it means that another process is or has been able to make progress. Hence the deadlock freedom.
+Any process is able to make progress during the wait-free traversal step. Then, if the nodes that where found couldn't be locked or validated, it means that another process is or has been able to make progress. Hence the deadlock freedom.
 
 \newpage
 

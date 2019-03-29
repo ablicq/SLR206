@@ -2,7 +2,7 @@
 
 $results = $1
 
-for ALG in CoarseGrainListBasedSet HandsOverHandsSet OptimisticSet;
+for ALG in CoarseGrainedListBasedSet HandsOverHandsSet OptimisticSet;
 do
     for nbThreads in 1 4 8 12;
     do

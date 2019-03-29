@@ -1,6 +1,6 @@
 ---
 title: SLR206 - Project Report
-author: Aurélien Blicq
+author: Aurélien Blicq & Antoine Bellami
 geometry: margin=2cm
 ---
 
@@ -354,3 +354,21 @@ Any process is able to make progress during the wait-free traversal step. Then, 
 
 # Performance tests
 
+## Graph depicting the throughput as a function of the number of threads for the four algorithms, with list size 100 and update ratio 10
+
+![Throughputs](images/throughputs.png)
+
+## Graphs depicting for each algorithm the throughput as a function of the number of threads, varying the update ratio, for the list size 1000
+
+![CoarseGrainedListBasedSet](images/CoarseGrainedListBasedSet.png)
+\newline
+![HandsOverHandsSet](images/HandsOverHandsSet.png)
+\newline
+![OptimisticSet](images/OptimisticSet.png)
+\newline
+![LazyLinkedListSortedSet](images/LazyLinkedListSortedSet.png)
+\newline
+
+## System details of the machine (lame10)
+
+![lame10 details](images/lame10.png)

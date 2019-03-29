@@ -5,7 +5,7 @@ for the four algorithms, for some representative list size and update ratio
 
 import matplotlib.pyplot as plt
 
-ALG = ['CoarseGrainedListBasedSet', 'HandsOverHandsSet', 'OptimisticSet']
+ALG = ['CoarseGrainedListBasedSet', 'HandsOverHandsSet', 'OptimisticSet', 'LazyLinkedListSortedSet']
 nbThreads=  ['1', '4', '8', '12']
 listSize = ['100', '1000', '10000']
 updateRatio = ['0', '10', '100']
@@ -14,6 +14,7 @@ plotStyles = {
     'CoarseGrainedListBasedSet': 'b+',
     'HandsOverHandsSet': 'rd',
     'OptimisticSet': 'go',
+    'LazyLinkedListSortedSet': 'm*',
     '0': 'bs',
     '10': 'rd',
     '100': 'go'
@@ -34,8 +35,6 @@ for algo in ALG:
         y.append(getThroughput(algo, nT, lS, uR))
     plt.plot(x, y, plotStyles[algo])
 
-plt.title('throughput as a function of the number of threads for the three '\
-           + 'algorithms, for list size ' +lS + ' and update ratio ' + uR)
 plt.xlabel('Number of threads')
 plt.ylabel('Throughput')
 plt.legend(ALG)

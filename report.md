@@ -358,17 +358,23 @@ Any process is able to make progress during the wait-free traversal step. Then, 
 
 ![Throughputs](images/throughputs.png)
 
+Strikingly, the *lazy linked list sorted set* algorithm and the *optimistic list with wait-free traversal and validation* algorithm benefit from multi-threading (with respective gains of almost **12** and **6** from 1 to 12 threads). On the other hand, the *hands over hands set* algorithm and the *coarse grained list based set* algorithm lose much efficiency by my multi-threading (respective losses of **2.5** and **3.5**).
+
 ## Graphs depicting for each algorithm the throughput as a function of the number of threads, varying the update ratio, for the list size 1000
 
 ![CoarseGrainedListBasedSet](images/CoarseGrainedListBasedSet.png)
-\newline
-![HandsOverHandsSet](images/HandsOverHandsSet.png)
-\newline
-![OptimisticSet](images/OptimisticSet.png)
-\newline
-![LazyLinkedListSortedSet](images/LazyLinkedListSortedSet.png)
-\newline
+The *coarse grained list based set* algorithm is absolutely not optimal for high contention since it runs locally. The throughput collapses when the number of threads increases because of the cost of the locks.
 
+![HandsOverHandsSet](images/HandsOverHandsSet.png)
+The *hands over hands set* algorithm supports concurrency better since there is concurrency when two updates are not working on the same nodes. The cost of locks is however still high with high contention.
+
+![OptimisticSet](images/OptimisticSet.png)
+The *optimistic list with wait-free traversal and validation* algorithm efficiently benefits from multi-threading because there are no locks on the traverse path.
+
+![LazyLinkedListSortedSet](images/LazyLinkedListSortedSet.png)
+The *lazy linked list sorted set* algorithm benefits at best from multi-threading since it is wait-free.
+
+\newpage
 ## System details of the machine (lame10)
 
 ![lame10 details](images/lame10.png)
